@@ -1,4 +1,5 @@
 # Script to train machine learning model.
+
 import pandas as pd
 import os
 from sklearn.model_selection import train_test_split
@@ -8,6 +9,7 @@ import pickle
 from pathlib import Path
 
 
+
 # Add the necessary imports for the starter code.
 
 # Add code to load in the data.
@@ -15,6 +17,7 @@ data = pd.read_csv("/Users/reneeliu/Desktop/mlops/deployMLFastAPI/starter/data/c
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
 print(train.info())
+
 
 
 
@@ -51,4 +54,5 @@ if __name__ == "__main__":
     # with open(f'{BASE_DIR}/saved_model/trained_model.pkl', 'wb') as f:
     #     pickle.dump(trained_model, f)
     #     f.close()
+
 
