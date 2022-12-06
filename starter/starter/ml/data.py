@@ -67,4 +67,5 @@ def process_data(
             pass
 
     X = np.concatenate([X_continuous, X_categorical], axis=1)
+
     return X, y, encoder, lb
