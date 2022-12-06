@@ -51,11 +51,6 @@ class Predictor(BaseModel):
 
 @app.post("/predict")
 async def predict(payload: Predictor):
-    # load model
-    BASE_DIR = Path(__file__).resolve(strict=True).parent
-
-
-
     payload_dict = dict(payload)
     payload_dataframe = pd.DataFrame(payload_dict, columns=payload_dict.keys(), index=[0])
 
