@@ -56,51 +56,51 @@ nbformat==5.7.0
 nest-asyncio==1.5.6
 notebook==6.5.2
 notebook_shim==0.2.2
-numexpr @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_98sxk8lloi/croot/numexpr_1668713874222/work
-numpy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_8efwh7lkf0/croot/numpy_and_numpy_base_1668593730126/work
-packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
+numexpr
+numpy
+packaging
 pandas==1.5.1
 pandocfilters==1.5.0
 parso==0.8.3
 pexpect==4.8.0
 pickleshare==0.7.5
 platformdirs==2.5.4
-pluggy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-w6jyveby/pluggy_1648109277227/work
+pluggy
 prometheus-client==0.15.0
 prompt-toolkit==3.0.33
 psutil==5.9.4
 ptyprocess==0.7.0
 pure-eval==0.2.2
-py @ file:///opt/conda/conda-bld/py_1644396412707/work
+py
 pycodestyle==2.10.0
 pycparser==2.21
-pydantic @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_77a008vmbg/croot/pydantic_1667416143355/work
+pydantic
 pyflakes==3.0.1
 Pygments==2.13.0
 pylint==2.15.9
-pyparsing @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_3b_3vxnd07/croots/recipe/pyparsing_1661452540919/work
+pyparsing
 pyrsistent==0.19.2
 pytest==7.1.2
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+python-dateutil
 python-dotenv==0.21.0
-pytz @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_830e8540-4c59-42fe-9515-a6f79c24ff6dh653xa67/croots/recipe/pytz_1654762630628/work
+pytz
 PyYAML==6.0
 pyzmq==24.0.1
 qtconsole==5.4.0
 QtPy==2.3.0
 rfc3986==1.5.0
-scikit-learn @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_85iea70f96/croot/scikit-learn_1667587552979/work
+scikit-learn
 scipy==1.9.3
 Send2Trash==1.8.0
-six @ file:///tmp/build/80754af9/six_1644875935023/work
-sniffio @ file:///home/conda/feedstock_root/build_artifacts/sniffio_1662051266223/work
+six
+sniffio
 soupsieve==2.3.2.post1
 stack-data==0.6.2
-starlette @ file:///home/conda/feedstock_root/build_artifacts/starlette-recipe_1668726462865/work
+starlette
 terminado==0.17.1
-threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
+threadpoolctl
 tinycss2==1.2.1
-tomli @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_d0e5ffbf-5cf1-45be-8693-c5dff8108a2awhthtjlq/croots/recipe/tomli_1657175508477/work
+tomli
 tomlkit==0.11.6
 tornado==6.2
 traitlets==5.6.0
