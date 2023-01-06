@@ -63,7 +63,7 @@ def test_compute_metrics(data_fixture):
     model = LogisticRegression(random_state=random_state).fit(X_train, y_train)
 
     X_testing, y_testing, encoder, lb = process_data(
-        testing, categorical_features=cat_features, label="salary", training=True
+        testing, categorical_features=cat_features, label="salary", training=False
     )
     predictions = model.predict(X_testing)
     precision, recall, fbeta = compute_model_metrics(y_testing, predictions)
