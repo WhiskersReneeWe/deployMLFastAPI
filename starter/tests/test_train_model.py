@@ -20,7 +20,10 @@ def data_fixture():
 def test_train_model(data_fixture):
     random_state = 1234
     training, testing = data_fixture
-    model = LogisticRegression(random_state=random_state).fit(X_train, y_train)
+    training_data, testing_data, training_labels, testing_labels = train_test_split(
+        training, testing, test_size=0.2, random_state=10
+    )
+    model = LogisticRegression(random_state=random_state).fit(training_data, training_labels)
 
     # model = RandomForestClassifier(random_state)
     # model.fit(X_train, y_train)
