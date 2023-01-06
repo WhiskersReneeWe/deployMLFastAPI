@@ -7,7 +7,7 @@ from starter.starter.ml.model import train_model, compute_model_metrics, inferen
 
 @pytest.fixture
 def data_fixture():
-    data = pd.read_csv("./data/census.csv")
+    data = pd.read_csv("starter/data/census.csv")
     # Optional enhancement, use K-fold cross validation instead of a train-test split.
     train, test = train_test_split(data, test_size=0.20)
     return train, test
