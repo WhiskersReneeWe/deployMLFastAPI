@@ -7,7 +7,7 @@ from starter.ml.model import train_model, compute_model_metrics, inference
 
 @pytest.fixture
 def data_fixture():
-    data = pd.read_csv("/Users/reneeliu/Desktop/mlops/deployMLFastAPI/starter/data/census.csv")
+    data = pd.read_csv("//data/census.csv")
     # Optional enhancement, use K-fold cross validation instead of a train-test split.
     train, test = train_test_split(data, test_size=0.20)
     return train, test
