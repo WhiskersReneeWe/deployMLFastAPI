@@ -2,7 +2,7 @@ import pytest
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from starter.ml.model import train_model, compute_model_metrics, inference
+from starter.starter.ml.model import train_model, compute_model_metrics, inference
 
 
 @pytest.fixture
