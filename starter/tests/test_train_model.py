@@ -2,6 +2,7 @@ import pytest
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from starter.starter.ml.data import process_data
 from starter.starter.ml.model import train_model, compute_model_metrics, inference
 
 
@@ -20,10 +21,20 @@ def data_fixture():
 def test_train_model(data_fixture):
     random_state = 1234
     training, testing = data_fixture
-    training_data, testing_data, training_labels, testing_labels = train_test_split(
-        training, testing, test_size=0.2, random_state=10
+    cat_features = [
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
+    ]
+    X_train, y_train, encoder, lb = process_data(
+        training, categorical_features=cat_features, label="salary", training=True
     )
-    model = LogisticRegression(random_state=random_state).fit(training_data, training_labels)
+    model = LogisticRegression(random_state=random_state).fit(X_train, y_train)
 
     # model = RandomForestClassifier(random_state)
     # model.fit(X_train, y_train)
@@ -35,12 +46,27 @@ def test_compute_metrics(data_fixture):
     """
     random_state = 1234
     training, testing = data_fixture
-    training_data, testing_data, training_labels, testing_labels = train_test_split(
-        training, testing, test_size=0.2, random_state=10
+    cat_features = [
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
+    ]
+    X_train, y_train, encoder, lb = process_data(
+        training, categorical_features=cat_features, label="salary", training=True
     )
-    model = train_model(training_data, training_labels, random_state=random_state)
-    predictions = model.predict(testing_data)
-    precision, recall, fbeta = compute_model_metrics(testing_labels, predictions)
+
+    model = LogisticRegression(random_state=random_state).fit(X_train, y_train)
+
+    X_testing, y_testing, encoder, lb = process_data(
+        testing, categorical_features=cat_features, label="salary", training=True
+    )
+    predictions = model.predict(X_testing)
+    precision, recall, fbeta = compute_model_metrics(y_testing, predictions)
     assert precision >= 0.70
     assert recall >= 0.52
     assert fbeta >= 0.6
