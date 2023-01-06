@@ -1,9 +1,27 @@
 import pytest
 import pandas as pd
+import numpy as np
+import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from starter.starter.ml.data import process_data
 from starter.starter.ml.model import train_model, compute_model_metrics, inference
+from pathlib import Path
+
+@pytest.fixture
+def model_encoder_fixture():
+    BASE_DIR = Path(__file__).resolve(strict=True).parent
+    print(BASE_DIR)
+
+    with open(f'{BASE_DIR}/starter/saved_model/trained_model.pkl', 'rb') as f:
+        model = pickle.load(f)
+        f.close()
+
+    with open(f'{BASE_DIR}/starter/saved_model/encoder.pkl', 'rb') as f:
+        encoder = pickle.load(f)
+        f.close()
+
+    return model, encoder
 
 
 @pytest.fixture
@@ -79,3 +97,8 @@ def test_inference(data_fixture):
     )
     model = train_model(training_data, training_labels, random_state=random_state)
     assert len(inference(model, testing_data)) == testing_data.shape[0]
+
+def test_model_types(model):
+    model, encoder = model_encoder_fixture
+    assert type(model.X_train) == np.ndarray
+    assert type(model.X_test)  == np.ndarray
