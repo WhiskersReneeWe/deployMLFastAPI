@@ -4,7 +4,7 @@ argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 astroid==2.12.13
 asttokens==2.2.1
-attrs @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_978y9aqcd7/croot/attrs_1668696180911/work
+attrs
 backcall==0.2.0
 beautifulsoup4==4.11.1
 bleach==5.0.1
