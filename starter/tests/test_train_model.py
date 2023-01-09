@@ -109,7 +109,9 @@ def test_inference(data_fixture):
         testing_data, categorical_features=cat_features, label="salary", training=True
     )
     model, _ = model_encoder_fixture
-    assert len(inference(model, X_test)) == len(y_test)
+    print(len(inference(model, X_test)))
+    print(len(X_test))
+    assert len(inference(model, X_test)) == len(X_test)
 
 def test_model_types(model_encoder_fixture):
     model, encoder = model_encoder_fixture
