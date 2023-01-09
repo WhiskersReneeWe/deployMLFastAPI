@@ -55,7 +55,7 @@ def test_get():
     assert res.status_code == 200
 
 def test_post_correct(lessthan50KPayload_fixture):
-    res = testApp.post("/predict")
+    res = testApp.post("/predict", json=lessthan50KPayload_fixture)
     assert res.status_code == 200
     assert res.json()["prediction"] == "Income < 50k"
 
