@@ -85,7 +85,7 @@ def test_compute_metrics(data_fixture, model_encoder_fixture):
     assert recall >= 0.2
     assert fbeta >= 0
 
-def test_inference(data_fixture):
+def test_inference(data_fixture, model_encoder_fixture):
     model, encoder = model_encoder_fixture
     training, testing = data_fixture
     cat_features = [
