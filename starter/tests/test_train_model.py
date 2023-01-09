@@ -95,8 +95,21 @@ def test_inference(data_fixture):
     training_data, testing_data, training_labels, _ = train_test_split(
         training, testing, test_size=0.2, random_state=random_state
     )
-    model, encoder = model_encoder_fixture
-    assert len(inference(model, testing_data)) == len(testing_data)
+    cat_features = [
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
+    ]
+    X_test, y_test, _, _ = process_data(
+        testing_data, categorical_features=cat_features, label="salary", training=True
+    )
+    model, _ = model_encoder_fixture
+    assert len(inference(model, X_test)) == len(y_test)
 
 def test_model_types(model_encoder_fixture):
     model, encoder = model_encoder_fixture
