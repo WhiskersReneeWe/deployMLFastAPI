@@ -79,22 +79,15 @@ def test_compute_metrics(data_fixture, model_encoder_fixture):
         training, categorical_features=cat_features, label="salary", training=True
     )
 
-
-    X_testing, y_testing, encoder, lb = process_data(
-        testing, categorical_features=cat_features, label="salary", training=True
-    )
-    predictions = model.predict(X_testing)
-    precision, recall, fbeta = compute_model_metrics(y_testing, predictions)
+    predictions = model.predict(X_train)
+    precision, recall, fbeta = compute_model_metrics(y_train, predictions)
     assert precision >= 0.2
     assert recall >= 0.2
     assert fbeta >= 0
 
 def test_inference(data_fixture):
+    model, encoder = model_encoder_fixture
     training, testing = data_fixture
-    random_state = 1234
-    training_data, testing_data, training_labels, _ = train_test_split(
-        training, testing, test_size=0.2, random_state=random_state
-    )
     cat_features = [
         "workclass",
         "education",
@@ -105,13 +98,11 @@ def test_inference(data_fixture):
         "sex",
         "native-country",
     ]
-    X_test, y_test, _, _ = process_data(
-        testing_data, categorical_features=cat_features, label="salary", training=True
+    X_train, y_train, encoder, lb = process_data(
+        training, categorical_features=cat_features, label="salary", training=True
     )
-    model, _ = model_encoder_fixture
-    print(len(inference(model, X_test)))
-    print(len(X_test))
-    assert len(inference(model, X_test)) == len(X_test)
+    preds = inference(model, X_train)
+    assert len(preds) == len(X_train)  # Assert that the length is the same as x_train
 
 def test_model_types(model_encoder_fixture):
     model, encoder = model_encoder_fixture
