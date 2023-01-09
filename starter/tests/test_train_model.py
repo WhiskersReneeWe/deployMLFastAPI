@@ -98,7 +98,7 @@ def test_inference(data_fixture):
     model, encoder = model_encoder_fixture
     assert len(inference(model, testing_data)) == testing_data.shape[0]
 
-def test_model_types(model):
+def test_model_types(model_encoder_fixture):
     model, encoder = model_encoder_fixture
     assert type(model.X_train) == np.ndarray
     assert type(model.X_test)  == np.ndarray
