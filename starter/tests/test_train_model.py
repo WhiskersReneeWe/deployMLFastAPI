@@ -96,7 +96,7 @@ def test_inference(data_fixture):
         training, testing, test_size=0.2, random_state=random_state
     )
     model, encoder = model_encoder_fixture
-    assert len(inference(model, testing_data)) == testing_data.shape[0]
+    assert len(inference(model, testing_data)) == len(testing_data.shape)
 
 def test_model_types(model_encoder_fixture):
     model, encoder = model_encoder_fixture
