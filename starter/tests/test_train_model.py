@@ -58,7 +58,7 @@ def test_train_model(data_fixture):
     # model.fit(X_train, y_train)
     assert model is not None
 
-def test_compute_metrics(data_fixture):
+def test_compute_metrics(data_fixture, model_encoder_fixture):
     """
     This functions tests the computation of the metrics
     """
