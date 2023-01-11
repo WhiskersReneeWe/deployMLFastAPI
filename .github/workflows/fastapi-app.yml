@@ -2,10 +2,6 @@
 
 name: Pytest and Flake8
 
-on:
-  push:
-    branches: [ "master" ]
-
 permissions:
   contents: read
 
