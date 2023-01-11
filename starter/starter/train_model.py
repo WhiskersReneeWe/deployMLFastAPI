@@ -3,8 +3,10 @@
 import pandas as pd
 import os
 from sklearn.model_selection import train_test_split
-from starter.starter.ml.data import process_data
-from starter.starter.ml.model import train_model
+# from starter.starter.ml.data import process_data
+# from starter.starter.ml.model import train_model
+from ml.data import process_data
+from ml.model import train_model
 import pickle
 from pathlib import Path
 
@@ -39,7 +41,7 @@ print(encoder)
 if __name__ == "__main__":
     print("Training started ... ")
     # Train and save a model.
-    print(X_train.shape)
+    #print(X_train.shape)
     # sample_test = X_train[0].reshape(1, -1)
     #
     # load model
